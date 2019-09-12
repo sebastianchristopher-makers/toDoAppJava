@@ -31,6 +31,12 @@ public class ToDoTest {
         assertEquals(0, anotherToDo.getLabelId());
     }
 
+    @Test
+    public void theContentCanBeEdited(){
+        toDo.edit("New content");
+        assertEquals("New content", toDo.getContent());
+    }
+
 
     @After
     public void tearDown(){

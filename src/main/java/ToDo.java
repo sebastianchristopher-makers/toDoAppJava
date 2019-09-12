@@ -15,6 +15,10 @@ public class ToDo {
         this.content = content;
     }
 
+    public void edit(String content){
+        this.content = content;
+    }
+
     public int getId() {
         return id;
     }

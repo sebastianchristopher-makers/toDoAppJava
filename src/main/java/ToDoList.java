@@ -34,7 +34,22 @@ public class ToDoList {
         }
     }
 
+    public void edit(int id, String content){
+        ToDo toDoToEdit = find(id);
+        toDoToEdit.edit(content);
+    }
+
     public String getName() {
         return name;
+    }
+
+    public ArrayList<ToDo> filterByLabel(int labelId){
+        ArrayList<ToDo> filteredList = new ArrayList<>();
+        for(ToDo todo : todos){
+            if(todo.getLabelId() == labelId){
+                filteredList.add(todo);
+            }
+        }
+        return filteredList;
     }
 }
