@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ToDoListTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-09-12T15:00:23" hostname="Makerss-MacBook-Pro-2.local" time="0.5">
+  <properties/>
+  <testcase name="itCanReturnAllToDos" classname="ToDoListTest" time="0.491"/>
+  <testcase name="itCanReturnASpecificToDo" classname="ToDoListTest" time="0.002"/>
+  <testcase name="itCanDeleteAToDo" classname="ToDoListTest" time="0.004"/>
+  <testcase name="itCanAddAToDo" classname="ToDoListTest" time="0.001"/>
+  <testcase name="itHasAName" classname="ToDoListTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
