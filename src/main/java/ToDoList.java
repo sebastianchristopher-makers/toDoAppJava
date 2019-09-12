@@ -1,3 +1,5 @@
+import models.ToDo;
+
 import java.util.ArrayList;
 
 public class ToDoList {
@@ -10,6 +12,7 @@ public class ToDoList {
         todos = new ArrayList<>();
     }
 
+    @Override
     public void add(ToDo todo){
         todos.add(todo);
     }

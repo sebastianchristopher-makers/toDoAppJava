@@ -1,4 +1,6 @@
 import static org.hamcrest.Matchers.*;
+
+import models.ToDo;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
