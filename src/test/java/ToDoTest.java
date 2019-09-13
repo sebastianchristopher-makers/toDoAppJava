@@ -16,7 +16,7 @@ public class ToDoTest {
 
     @Before
     public void setUp() {
-//        ToDo toDoClass = new ToDo();
+        toDoClass.reset();
         toDo = new ToDo(1, "Walk dog", 1);
     }
 

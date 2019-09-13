@@ -36,7 +36,7 @@ I would like to be able to filter my todos by label
 Controller:
 ![webApp](./images/webApp.png)
 Model:
-![xml model](./images/ToDoApp.jpg)
+![xml model](./images/ToDoAppRefactored.jpg)
 
 Migrations:
 ```

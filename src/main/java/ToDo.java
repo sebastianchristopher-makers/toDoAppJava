@@ -7,7 +7,12 @@ public class ToDo {
     private int id;
     private String content;
     private int labelId;
-    private static ArrayList<ToDo> todos = new ArrayList<>();;
+    private static ArrayList<ToDo> todos = new ArrayList<>();
+
+    public static void reset(){ //temporary helper method to pass test until replace arraylist with database
+        todos = null;
+        todos = new ArrayList<>();
+    }
 
     public static void add(ToDo todo){
         todos.add(todo);
