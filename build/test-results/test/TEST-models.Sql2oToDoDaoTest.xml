@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="models.Sql2oToDoDaoTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-09-13T15:47:33" hostname="Makerss-MacBook-Pro-2.local" time="0.478">
+  <properties/>
+  <testcase name="existingToDosCanBeFoundById" classname="models.Sql2oToDoDaoTest" time="0.23"/>
+  <testcase name="allToDosContainAllToDos" classname="models.Sql2oToDoDaoTest" time="0.051"/>
+  <testcase name="itCanEditAToDo" classname="models.Sql2oToDoDaoTest" time="0.03"/>
+  <testcase name="itCanDeleteAToDo" classname="models.Sql2oToDoDaoTest" time="0.035"/>
+  <testcase name="itCanDeleteAllToDos" classname="models.Sql2oToDoDaoTest" time="0.05"/>
+  <testcase name="allReturnsNothingIfNoToDos" classname="models.Sql2oToDoDaoTest" time="0.016"/>
+  <testcase name="addingToDoSetsId" classname="models.Sql2oToDoDaoTest" time="0.02"/>
+  <testcase name="allReturnsAllToDos" classname="models.Sql2oToDoDaoTest" time="0.037"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
