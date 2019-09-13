@@ -108,18 +108,20 @@ public class Sql2oToDoDaoTest {
         conn.close();
     }
 
-//    @Test
-//    public void itCanReturnToDosWithASpecificLabel(){
-//        ToDo toDoTwo = new ToDo(2, "foo", 2);
-//        ToDo toDoThree = new ToDo(3, "bar", 1);
-//        toDoClass.add(toDo);
-//        toDoClass.add(toDoTwo);
-//        toDoClass.add(toDoThree);
-//
-//        ArrayList<ToDo> labelsWithOne = toDoClass.filterByLabel(1);
-//
-//        assertEquals(2, labelsWithOne.size());
-//        assertThat(labelsWithOne, Matchers.hasItems(toDo, toDoThree));
-//    }
-//
+    @Ignore
+    @Test
+    public void itCanReturnToDosWithASpecificLabel(){
+        String sql = "INSERT INTO label (name) VALUES (Chores, Leisure)";
+        conn.createQuery(sql).executeUpdate();
+        ToDo twoDo = new ToDo("foo", 2);
+        ToDo threeDo = new ToDo("bar", 1);
+        ToDo fourDo = new ToDo("four", 2);
+        todoDao.add(twoDo);
+        todoDao.add(threeDo);
+        todoDao.add(fourDo);
+
+        assertEquals(2, todoDao.filterByLabel(2).size());
+        assertThat(todoDao.filterByLabel(2), hasItems(twoDo, fourDo));
+    }
+
 }

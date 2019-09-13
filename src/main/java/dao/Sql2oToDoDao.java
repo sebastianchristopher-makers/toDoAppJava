@@ -71,6 +71,18 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
     }
 
     @Override
+    public List<ToDo> filterByLabel(int labelId){
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM todo WHERE labelId = :labelId")
+                    .addParameter("labelId", labelId)
+                    .executeAndFetch(ToDo.class); //fetch a list
+        } catch(Sql2oException ex) {
+            System.out.println(ex);
+        }
+        return null;
+    }
+
+    @Override
     public void clearAll(){
         try(Connection con = sql2o.open()){
             con.createQuery("TRUNCATE todo").executeUpdate();

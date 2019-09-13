@@ -26,21 +26,6 @@ public class ToDo {
         return Objects.hash(id, content, labelId);
     }
 
-//    public static  ArrayList<ToDo> filterByLabel(int labelId){
-//        ArrayList<ToDo> filteredList = new ArrayList<>();
-//        for(ToDo todo : todos){
-//            if(todo.getLabelId() == labelId){
-//                filteredList.add(todo);
-//            }
-//        }
-//        return filteredList;
-//    }
-//
-//    public static void reset(){
-//        todos = null;
-////        todos = new ArrayList<>(); // moved to db
-//    }
-
     public ToDo(String content, int labelId){
 //        this.id = id; // moved to db
         this.content = content;

@@ -12,6 +12,7 @@ public interface ToDoDao {
 
     // READ
     ToDo find(int id);
+    List<ToDo> filterByLabel(int labelId);
 
     // UPDATE
      void edit(ToDo todo, String content);

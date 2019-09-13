@@ -1,4 +1,7 @@
+package models;
+
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -13,12 +16,12 @@ public class LabelTest {
 
     @Test
     public void itHasAName(){
-        assertEquals("Chores", label.getName());
+        Assert.assertEquals("Chores", label.getName());
     }
 
     @Test
     public void itHasAnId(){
-        assertEquals(1, label.getId());
+        Assert.assertEquals(1, label.getId());
     }
 
     @After
