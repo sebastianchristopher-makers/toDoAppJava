@@ -11,17 +11,17 @@ public class LabelTest {
 
     @Before
     public void setUp(){
-        label = new Label(1, "Chores");
+        label = new Label("Chores");
+    }
+
+    @Test
+    public void itInstantiates(){
+        assertTrue(label instanceof Label);
     }
 
     @Test
     public void itHasAName(){
-        Assert.assertEquals("Chores", label.getName());
-    }
-
-    @Test
-    public void itHasAnId(){
-        Assert.assertEquals(1, label.getId());
+        assertEquals("Chores", label.getName());
     }
 
     @After

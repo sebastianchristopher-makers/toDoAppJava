@@ -16,15 +16,15 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
 
     @Override
     public void add(ToDo todo) {
-        String sql = "INSERT INTO todo (content) VALUES (:content)"; //raw sql
-        try(Connection con = sql2o.open()){ //try to open a connection
-            int id = (int) con.createQuery(sql, true) //make a new variable
-                    .bind(todo) //map my argument onto the query so we can use information from it (pass in :content)
-                    .executeUpdate() //run it all
-                    .getKey(); //int id is now the row number (row “key”) of db
-            todo.setId(id); //update object to set id now from database
+        String sql = "INSERT INTO todo (content) VALUES (:content)";
+        try(Connection con = sql2o.open()){
+            int id = (int) con.createQuery(sql, true)
+                    .bind(todo)
+                    .executeUpdate()
+                    .getKey();
+            todo.setId(id);
         } catch (Sql2oException ex) {
-            System.out.println("25: " + ex);
+            System.out.println(ex);
         }
     }
 
@@ -34,7 +34,7 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
             return con.createQuery("SELECT * FROM todo") //raw sql
                     .executeAndFetch(ToDo.class); //fetch a list
         } catch(Sql2oException ex) {
-            System.out.println("35: " + ex);
+            System.out.println(ex);
         }
         return Collections.emptyList();
     }
@@ -55,7 +55,7 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
                     .addParameter("id", id)
                     .executeUpdate();
         } catch (Sql2oException ex) {
-            System.out.println("57: " + ex);
+            System.out.println(ex);
         }
     }
 
@@ -68,7 +68,7 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
                     .executeUpdate();
             todo.setContent(content);
         } catch (Sql2oException ex) {
-            System.out.println("70: " + ex);
+            System.out.println(ex);
         }
     }
 

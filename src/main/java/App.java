@@ -4,7 +4,9 @@ import java.util.Map;
 import static spark.Spark.get;
 import static spark.Spark.post;
 import dao.Sql2oToDoDao;
+import dao.Sql2oLabelDao;
 import models.ToDo;
+import models.Label;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import static spark.Spark.*;
@@ -17,6 +19,7 @@ public class App {
         String connectionString = "jdbc:postgresql://localhost:5432/toDoList";
         Sql2o sql2o = new Sql2o(connectionString, "student", "");
         Sql2oToDoDao todoDao = new Sql2oToDoDao(sql2o);
+        Sql2oLabelDao labelDao = new Sql2oLabelDao(sql2o);
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
@@ -29,8 +32,19 @@ public class App {
 
         get ("/todos/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "templates/todos.vtl");
+            model.put("labels", labelDao.all());
+            return new ModelAndView(model, "templates/new-todo.vtl");
         }, new spark.template.velocity.VelocityTemplateEngine());
+
+        post("/todos", (req, res) -> {
+            String content = req.queryParams("content");
+            System.out.println(req.queryParams("label"));
+            ToDo todo = new ToDo(content);
+            todoDao.add(todo);
+            res.redirect("/");
+            return null;
+        });
+
 
         get("/todos/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

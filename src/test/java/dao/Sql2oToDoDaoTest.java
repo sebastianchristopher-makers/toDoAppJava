@@ -1,4 +1,4 @@
-package models;
+package dao;
 import dao.Sql2oToDoDao;
 import models.ToDo;
 import static org.hamcrest.Matchers.*;

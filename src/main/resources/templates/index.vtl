@@ -16,6 +16,9 @@
   #else
     <p>Nothing to do!</p>
   #end
+  <form style="text-align:center" action="/todos/new" method="GET">
+    <input type="Submit" value="Add new">
+  </form>
   #if (!$todos.isEmpty())
     <form style="text-align:center" action="/todos/delete" method="GET">
       <input type="Submit" value="Delete all">
