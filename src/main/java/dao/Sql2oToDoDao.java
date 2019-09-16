@@ -2,6 +2,8 @@ package dao;
 
 import models.ToDo;
 import org.sql2o.*;
+
+import java.util.Collections;
 import java.util.List;
 
 public class Sql2oToDoDao implements ToDoDao { //implementing our interface
@@ -34,7 +36,7 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
         } catch(Sql2oException ex) {
             System.out.println("35: " + ex);
         }
-        return null;
+        return Collections.emptyList();
     }
 
     @Override
@@ -79,7 +81,7 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
         } catch(Sql2oException ex) {
             System.out.println(ex);
         }
-        return null;
+        return Collections.emptyList();
     }
 
     @Override

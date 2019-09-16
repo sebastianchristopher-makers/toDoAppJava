@@ -1,8 +1,6 @@
 package models;
 
 import dao.Sql2oToDoDao;
-import com.sun.tools.javac.comp.Todo;
-import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
