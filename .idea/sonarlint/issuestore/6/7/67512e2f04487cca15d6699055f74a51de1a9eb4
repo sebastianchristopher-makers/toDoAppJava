@@ -1,0 +1,7 @@
+
+1squid:S1220""Move this file to a named package.
+Msquid:S14818"*Remove this unused "model" local variable.(ëˆâîşÿÿÿÿ8å‹„òÓ-
+esquid:S1192"GDefine a constant instead of duplicating this literal "labels" 6 times.(æ•ùÓ8ÑõòÓ-
+Msquid:S1481\"*Remove this unused "model" local variable.(ëˆâîşÿÿÿÿ8‘ì×ÆÓ-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ê§Ëî8ğ†ËÓ-
+Msquid:S1481B"*Remove this unused "model" local variable.(ëˆâîşÿÿÿÿ8äĞóÓ-

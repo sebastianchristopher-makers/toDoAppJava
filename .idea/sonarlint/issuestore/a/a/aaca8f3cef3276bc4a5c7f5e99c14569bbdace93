@@ -1,0 +1,9 @@
+
+fsquid:S2095,"CUse try-with-resources or close this "Query" in a "finally" clause.(…é¨ïûÿÿÿÿ8ÙÁ²ŞÒ-
+asquid:S2095A"CUse try-with-resources or close this "Query" in a "finally" clause.(Ìœ¡Ğ8ÉêåğÓ-
+asquid:S2095>"CUse try-with-resources or close this "Query" in a "finally" clause.(¨ò£“8ÉêåğÓ-
+gsquid:S1192"IDefine a constant instead of duplicating this literal "Walk dog" 4 times.(ä³Ş²8¤ßÒ-
+…"squid:ClassVariableVisibilityCheck"PMake toDo a static final constant or non-public and provide accessors if needed.(Š•¯ƒ8ª¤ıÕÒ-
+Isquid:S1068"+Remove this unused "todoDao" private field.(ò¤óô8øƒŞÒ-
+asquid:S2095@"CUse try-with-resources or close this "Query" in a "finally" clause.(¨ò£“8ÉêåğÓ-
+[squid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8£©—ßÒ-

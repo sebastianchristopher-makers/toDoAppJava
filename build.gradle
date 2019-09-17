@@ -18,6 +18,7 @@ dependencies {
     compile group: 'org.sql2o', name: 'sql2o', version: '1.6.0'
     compile 'com.sparkjava:spark-core:2.2'
     compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
+    implementation "org.mindrot:jbcrypt:0.4"
 //    compile group: 'com.oracle', name: 'ojdbc14', version: '10.2.0.2.0'
 
 }

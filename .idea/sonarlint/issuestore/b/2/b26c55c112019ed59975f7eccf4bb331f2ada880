@@ -1,0 +1,13 @@
+
+¤%squid:RedundantThrowsDeclarationCheckr"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(«¤ÜÕ8Å¸»ðÓ-
+asquid:S2095t"CUse try-with-resources or close this "Query" in a "finally" clause.(¨ò£“8Å¸»ðÓ-
+esquid:S00112$"FDefine and throw a dedicated exception instead of using a generic one.(”µ‚œ8€†ŽÑÓ-
+asquid:S2095w"CUse try-with-resources or close this "Query" in a "finally" clause.(Ìœ¡Ð8Å¸»ðÓ-
+©%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(‚ëô¡þÿÿÿÿ8ëãÔÏÓ-
+asquid:S2095v"CUse try-with-resources or close this "Query" in a "finally" clause.(¨ò£“8…ÁÀÓÓ-
+esquid:S00112r"FDefine and throw a dedicated exception instead of using a generic one.(«¤ÜÕ8Å¸»ðÓ-
+jsquid:S1192"GDefine a constant instead of duplicating this literal "Chores" 3 times.(Ð¢îßüÿÿÿÿ8å¼°ÑÓ-
+jsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(‚ëô¡þÿÿÿÿ8°ìÛÍÓ-
+isquid:S1192/"FDefine a constant instead of duplicating this literal "Three" 3 times.( ºˆ»ùÿÿÿÿ8€†ŽÑÓ-
+¤%squid:RedundantThrowsDeclarationCheck$"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(”µ‚œ8åýüÑÓ-
+]squid:UselessImportCheck"-Remove this unused import 'org.junit.Ignore'.(®ÅýÏÿÿÿÿÿ8×ªõÔÓ-

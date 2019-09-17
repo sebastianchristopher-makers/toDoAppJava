@@ -7,6 +7,7 @@ import dao.Sql2oToDoDao;
 import dao.Sql2oLabelDao;
 import models.ToDo;
 import models.Label;
+import org.mindrot.jbcrypt.BCrypt;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import static spark.Spark.*;
@@ -14,6 +15,11 @@ import static spark.Spark.*;
 public class App {
 
     public static void main(String[] args) {
+
+        String plainTextPassword = "Password1234";
+        String hashPassword = BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
+        System.out.println(BCrypt.checkpw(plainTextPassword, hashPassword));
+        System.out.println(BCrypt.checkpw("DifferentPassword", hashPassword));
 
 //        String connectionString = "jdbc:h2:~/todolist.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         String connectionString = "jdbc:postgresql://localhost:5432/toDoList";
@@ -23,8 +29,8 @@ public class App {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-//            List<Label> labels = labelDao.all();
-//            model.put("labels", labels);
+            List<Label> labels = labelDao.all();
+            model.put("labels", labels);
             model.put("labelDao", labelDao);
             List<ToDo> todos = todoDao.all();
             model.put("todos", todos);
@@ -87,9 +93,18 @@ public class App {
             return null;
         });
 
+        get("/labels/:id/todos", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            System.out.println(req.params("id"));
+            int id = Integer.parseInt(req.params("id"));
+            List<ToDo> todos = todoDao.filterByLabel(id);
+            model.put("todos", todos);
+            model.put("labelDao", labelDao);
+            return new ModelAndView(model, "templates/labels/index.vtl");
+        }, new spark.template.velocity.VelocityTemplateEngine());
+
 
         get("/todos/delete", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
             todoDao.clearAll();
             res.redirect("/");
             return null;

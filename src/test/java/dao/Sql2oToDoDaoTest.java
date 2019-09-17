@@ -132,11 +132,13 @@ public class Sql2oToDoDaoTest {
         conn.close();
     }
 
-    @Ignore
     @Test
     public void itCanReturnToDosWithASpecificLabel(){
-        String sql = "INSERT INTO label (name) VALUES (Chores, Leisure)";
-        conn.createQuery(sql).executeUpdate();
+        String sql = "INSERT INTO label (name) VALUES (:chores), (:leisure)";
+        conn.createQuery(sql)
+                .addParameter("chores", "chores")
+                .addParameter("leisure", "leisure")
+                .executeUpdate();
         ToDo twoDo = new ToDo("foo", 2);
         ToDo threeDo = new ToDo("bar", 1);
         ToDo fourDo = new ToDo("four", 2);

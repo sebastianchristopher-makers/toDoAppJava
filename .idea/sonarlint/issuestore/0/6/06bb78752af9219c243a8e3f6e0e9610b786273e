@@ -1,0 +1,18 @@
+
+V
+squid:S106%"9Replace this use of System.out or System.err by a logger.(ö¬8îÛ±ÖÒ-
+V
+squid:S106:"9Replace this use of System.out or System.err by a logger.(ö¬8áà§ÖÒ-
+asquid:S2095""CUse try-with-resources or close this "Query" in a "finally" clause.(»ÒÂ8ß‚ÄÍÒ-
+fsquid:S20956"CUse try-with-resources or close this "Query" in a "finally" clause.(ê”™ÿÿÿÿÿ8„š¤ÖÒ-
+`squid:S2095N"CUse try-with-resources or close this "Query" in a "finally" clause.(êÓ¶8‹»åÜÒ-
+fsquid:S2095Z"CUse try-with-resources or close this "Query" in a "finally" clause.(½ş‡ßıÿÿÿÿ8ä˜¡ÙÒ-
+asquid:S2095"CUse try-with-resources or close this "Query" in a "finally" clause.(š¥ù–8ß‚ÄÍÒ-
+fsquid:S2095A"CUse try-with-resources or close this "Query" in a "finally" clause.(ûÁ¬Áüÿÿÿÿ8¢Ö÷ÖÒ-
+fsquid:S2095-"CUse try-with-resources or close this "Query" in a "finally" clause.(’šÓòøÿÿÿÿ8ß‚ÄÍÒ-
+V
+squid:S106R"9Replace this use of System.out or System.err by a logger.(ö¬8‹»åÜÒ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8ß‚ÄÍÒ-
+V
+squid:S106G"9Replace this use of System.out or System.err by a logger.(ö¬8ëÀğÖÒ-

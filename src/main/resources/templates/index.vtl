@@ -14,7 +14,8 @@
           #set($label = $labelDao.find($labelId))
           #set($labelName = $label.getName())
           #set($todoRoute = "/todos/" + $todo.id + "/edit")
-        <li><a href=$todoRoute>$todo.content</a> $labelName</li>
+          #set($labelRoute = "/labels/" + $labelId + "/todos")
+        <li><a href=$todoRoute>$todo.content</a> <a href=$labelRoute style="color:red; font-family:comic sans ms; font-style:italic">$labelName</a></li>
         #end
       </ul>
   #else

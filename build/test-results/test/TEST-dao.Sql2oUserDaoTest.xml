@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dao.Sql2oUserDaoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-17T19:50:47" hostname="Makerss-MacBook-Pro-2.local" time="0.245">
+  <properties/>
+  <testcase name="authenticateRejectsAnIncorrectUser" classname="dao.Sql2oUserDaoTest" time="0.245"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
