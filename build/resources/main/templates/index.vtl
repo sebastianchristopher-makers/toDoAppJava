@@ -10,19 +10,26 @@
     #if (!$todos.isEmpty())
       <ul>
         #foreach( $todo in $todos )
-          <li>$todo.content</li>
+          #set($labelId = $todo.labelId)
+          #set($label = $labelDao.find($labelId))
+          #set($labelName = $label.getName())
+          #set($todoRoute = "/todos/" + $todo.id + "/edit")
+        <li><a href=$todoRoute>$todo.content</a> $labelName</li>
         #end
       </ul>
   #else
     <p>Nothing to do!</p>
   #end
   <form style="text-align:center" action="/todos/new" method="GET">
-    <input type="Submit" value="Add new">
+    <input type="Submit" value="Add To Do">
   </form>
   #if (!$todos.isEmpty())
     <form style="text-align:center" action="/todos/delete" method="GET">
       <input type="Submit" value="Delete all">
     </form>
   #end
+  <form action="/labels/new" method="GET">
+    <input type="submit" value="Add a label">
+  </form>
   </body>
 </html>

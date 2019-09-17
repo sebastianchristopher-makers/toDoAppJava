@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Class dao.Sql2oLabelDaoTest</title>
+<title>Test results - Class dao.Sql2oToDoDaoTest</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>Class dao.Sql2oLabelDaoTest</h1>
+<h1>Class dao.Sql2oToDoDaoTest</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/dao.html">dao</a> &gt; Sql2oLabelDaoTest</div>
+<a href="../packages/dao.html">dao</a> &gt; Sql2oToDoDaoTest</div>
 <div id="summary">
 <table>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">9</div>
+<div class="counter">10</div>
 <p>tests</p>
 </div>
 </td>
@@ -35,13 +35,13 @@
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.338s</div>
+<div class="counter">1.256s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,7 +50,7 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
+<div class="infoBox skipped" id="successRate">
 <div class="percent">100%</div>
 <p>successful</p>
 </div>
@@ -75,49 +75,54 @@
 </tr>
 </thead>
 <tr>
-<td class="success">allLabelsContainAllLabels</td>
-<td class="success">0.041s</td>
+<td class="success">addingToDoSetsId</td>
+<td class="success">0.028s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">allReturnsAllLabels</td>
-<td class="success">0.038s</td>
+<td class="success">allReturnsAllToDos</td>
+<td class="success">0.079s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">allReturnsDefaultLabelIfNoOtherLabels</td>
-<td class="success">0.044s</td>
+<td class="success">allReturnsNothingIfNoToDos</td>
+<td class="success">0.027s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">allReturnsOneLabelIfNoOtherLabels</td>
-<td class="success">0.017s</td>
+<td class="success">allToDosContainAllToDos</td>
+<td class="success">0.216s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">creatingALabelSetsId</td>
-<td class="success">0.018s</td>
+<td class="success">existingToDosCanBeFoundById</td>
+<td class="success">0.140s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">existingLabelsCanBeFoundById</td>
-<td class="success">0.044s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">itCanDeleteALabel</td>
-<td class="success">0.051s</td>
+<td class="success">itCanDeleteAToDo</td>
+<td class="success">0.053s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">itCanDeleteAllToDos</td>
-<td class="success">0.052s</td>
+<td class="success">0.067s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">itCanEditAToDo</td>
-<td class="success">0.033s</td>
+<td class="success">0.321s</td>
 <td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">itCanEditAToDoAddingADifferentLabel</td>
+<td class="success">0.325s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="skipped">itCanReturnToDosWithASpecificLabel</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 </table>
 </div>

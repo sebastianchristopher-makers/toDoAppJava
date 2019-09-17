@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <!--It's useful to put a comment at the top of your vtl file to help you keep track of what is what when things get more complex.-->
+    <h1 style="text-align:center">To Do</h1>
+    #if ($todo)
+      <ul>
+          #set($labelId = $todo.labelId)
+          #set($label = $labelDao.find($labelId))
+          #set($labelName = $label.getName())
+          <li>$todo.content $labelName</li>
+      </ul>
+    #set($editRoute = "/todos/" + $todo.id + "/edit")
+    <form action=$editRoute method="POST">
+      <input type="text" name="content" value="$todo.content">
+      <select id="labels" name="labels">
+        #foreach( $label in $labels )
+          #if($label.id == $todo.labelId)
+            <option value=$label.id selected>$label.name</option>
+          #else
+            <option value=$label.id>$label.name</option>
+          #end
+        #end
+      </select>
+      <input type="submit" value="Update">
+    </form>
+    #set($deleteRoute = "/todos/" + $todo.id + "/delete")
+    <form action=$deleteRoute method="POST">
+      <input type="submit" value="delete">
+    </form>
+  #else
+    <p>Nothing to do!</p>
+  #end
+  </body>
+</html>

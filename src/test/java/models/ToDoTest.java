@@ -41,21 +41,31 @@ public class ToDoTest {
 
         @Test
         public void itCanHaveALabelId(){
-            conn.createQuery("INSERT INTO label(name) VALUES(chores)")
+            conn.createQuery("INSERT INTO label(name) VALUES(:chores)")
+                    .addParameter("chores", "chores")
                     .executeUpdate();
-            Assert.assertEquals(1, toDo.getLabelId());
+            toDo = new ToDo("Walk dog", 2);
+            Assert.assertEquals(2, toDo.getLabelId());
         }
 
         @Test
-        public void itCanNotHaveALabelId(){
+        public void defaultLabelIdIsOne(){
             ToDo anotherToDo = new ToDo("Walk dog");
-            Assert.assertEquals(0, anotherToDo.getLabelId());
+            Assert.assertEquals(1, anotherToDo.getLabelId());
         }
 
         @After
         public void tearDown(){
             toDo = null;
             toDoClass = null;
+            String sql = "TRUNCATE label CASCADE;";
+            conn.createQuery(sql).executeUpdate();
+            sql = "ALTER SEQUENCE label_id_seq RESTART WITH 1;";
+            conn.createQuery(sql).executeUpdate();
+            conn.createQuery("INSERT INTO label (name) VALUES (:none)")
+                    .addParameter("none", "(none)")
+                    .executeUpdate();
+            conn.close();
         }
 
 }

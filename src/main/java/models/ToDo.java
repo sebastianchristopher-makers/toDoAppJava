@@ -27,14 +27,13 @@ public class ToDo {
     }
 
     public ToDo(String content, int labelId){
-//        this.id = id; // moved to db
         this.content = content;
         this.labelId = labelId;
     }
 
     public ToDo(String content) {
-//        this.id = id; // moved to db
         this.content = content;
+        this.labelId = 1;
     }
 
     public int getId() {

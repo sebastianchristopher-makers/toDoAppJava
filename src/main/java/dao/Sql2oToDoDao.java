@@ -16,7 +16,7 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
 
     @Override
     public void add(ToDo todo) {
-        String sql = "INSERT INTO todo (content) VALUES (:content)";
+        String sql = "INSERT INTO todo (content, labelId) VALUES (:content, :labelId)"; ///////
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql, true)
                     .bind(todo)
@@ -60,13 +60,13 @@ public class Sql2oToDoDao implements ToDoDao { //implementing our interface
     }
 
     @Override
-    public void edit(ToDo todo, String content){
+    public void edit(int id, String content, int labelId){
         try(Connection con = sql2o.open()){
-            con.createQuery("UPDATE todo SET content = :content WHERE id = :id")
-                    .addParameter("id", todo.getId())
+            con.createQuery("UPDATE todo SET content = :content, labelId = :labelId WHERE id = :id")
+                    .addParameter("id", id)
                     .addParameter("content", content)
+                    .addParameter("labelId", labelId)
                     .executeUpdate();
-            todo.setContent(content);
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }

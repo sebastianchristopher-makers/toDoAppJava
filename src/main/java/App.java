@@ -23,11 +23,21 @@ public class App {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-//                List<Category> allCategories = categoryDao.getAll();
-//                model.put("categories", allCategories);
+//            List<Label> labels = labelDao.all();
+//            model.put("labels", labels);
+            model.put("labelDao", labelDao);
             List<ToDo> todos = todoDao.all();
             model.put("todos", todos);
             return new ModelAndView(model, "templates/index.vtl");
+        }, new spark.template.velocity.VelocityTemplateEngine());
+
+        get ("/todos/:id/edit", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(req.params(":id"));
+            model.put("labelDao", labelDao);
+            model.put("labels", labelDao.all());
+            model.put("todo", todoDao.find(id));
+            return new ModelAndView(model, "templates/todo.vtl");
         }, new spark.template.velocity.VelocityTemplateEngine());
 
         get ("/todos/new", (req, res) -> {
@@ -36,11 +46,43 @@ public class App {
             return new ModelAndView(model, "templates/new-todo.vtl");
         }, new spark.template.velocity.VelocityTemplateEngine());
 
+        get ("/labels/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("labels", labelDao.all());
+            return new ModelAndView(model, "templates/new-label.vtl");
+        }, new spark.template.velocity.VelocityTemplateEngine());
+
+        post("/todos/:id/edit", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(req.params(":id"));
+            String content = req.queryParams("content");
+            int labelId = Integer.parseInt(req.queryParams("labels"));
+            todoDao.edit(id, content, labelId);
+            res.redirect("/");
+            return null;
+        });
+
+        post("/todos/:id/delete", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(req.params(":id"));
+            todoDao.delete(id);
+            res.redirect("/");
+            return null;
+        });
+
         post("/todos", (req, res) -> {
             String content = req.queryParams("content");
-            System.out.println(req.queryParams("label"));
-            ToDo todo = new ToDo(content);
+            int labelId = Integer.parseInt(req.queryParams("labels"));
+            ToDo todo = new ToDo(content, labelId);
             todoDao.add(todo);
+            res.redirect("/");
+            return null;
+        });
+
+        post("/labels", (req, res) -> {
+            String name = req.queryParams("name");
+            Label label = new Label(name);
+            labelDao.add(label);
             res.redirect("/");
             return null;
         });

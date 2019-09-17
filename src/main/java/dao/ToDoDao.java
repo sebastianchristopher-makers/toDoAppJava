@@ -15,7 +15,7 @@ public interface ToDoDao {
     List<ToDo> filterByLabel(int labelId);
 
     // UPDATE
-     void edit(ToDo todo, String content);
+     void edit(int id, String content, int labelId);
 
     // DELETE
      void delete(int id);

@@ -22,7 +22,7 @@ public class Sql2oToDoDaoTest {
 
     @Test
     public void addingToDoSetsId() throws Exception {
-        ToDo todo = new ToDo ("mow the lawn");
+        ToDo todo = new ToDo ("mow the lawn", 1);
         int originalToDoId = todo.getId();
         todoDao.add(todo);
         assertNotEquals(originalToDoId, todo.getId());
@@ -80,8 +80,24 @@ public class Sql2oToDoDaoTest {
         ToDo todo = new ToDo ("mow the lawn");
         String originalToDoContent = todo.getContent();
         todoDao.add(todo);
-        todoDao.edit(todo, "I say something else now.");
-        assertNotEquals(originalToDoContent, todo.getContent());
+        todoDao.edit(todo.getId(), "I say something else now.", todo.getLabelId());
+        String newToDoContent = todoDao.find(todo.getId()).getContent();
+        assertNotEquals(originalToDoContent, newToDoContent);
+    }
+
+    @Test
+    public void itCanEditAToDoAddingADifferentLabel(){
+        String sql = "INSERT INTO label (name) VALUES (:chores), (:leisure)";
+        conn.createQuery(sql)
+                .addParameter("chores", "chores")
+                .addParameter("leisure", "leisure")
+                .executeUpdate();
+        ToDo todo = new ToDo ("mow the lawn");
+        int originalLabelId = todo.getLabelId();
+        todoDao.add(todo);
+        todoDao.edit(todo.getId(), "I say something else now.", 2);
+        int newLabelId = todoDao.find(todo.getId()).getLabelId();
+        assertNotEquals(originalLabelId, newLabelId);
     }
 
     @Test
@@ -105,6 +121,14 @@ public class Sql2oToDoDaoTest {
         conn.createQuery(sql).executeUpdate();
         sql = "ALTER SEQUENCE todo_id_seq RESTART WITH 1;";
         conn.createQuery(sql).executeUpdate();
+
+        sql = "TRUNCATE label CASCADE;";
+        conn.createQuery(sql).executeUpdate();
+        sql = "ALTER SEQUENCE label_id_seq RESTART WITH 1;";
+        conn.createQuery(sql).executeUpdate();
+        conn.createQuery("INSERT INTO label (name) VALUES (:none)")
+                .addParameter("none", "(none)")
+                .executeUpdate();
         conn.close();
     }
 

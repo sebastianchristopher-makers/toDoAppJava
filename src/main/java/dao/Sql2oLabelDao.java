@@ -67,7 +67,7 @@ public class Sql2oLabelDao implements LabelDao{
     @Override
     public void clearAll(){
         try(Connection con = sql2o.open()){
-            con.createQuery("TRUNCATE label CASCADE").executeUpdate();
+            con.createQuery("DELETE FROM label WHERE id != 1").executeUpdate();
         } catch(Sql2oException ex){
             System.out.println(ex);
         }

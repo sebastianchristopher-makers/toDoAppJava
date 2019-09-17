@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dao.Sql2oLabelDaoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-16T15:33:35" hostname="Makerss-MacBook-Pro-2.local" time="0.319">
+<testsuite name="dao.Sql2oLabelDaoTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2019-09-17T09:32:12" hostname="Makerss-MacBook-Pro-2.local" time="0.343">
   <properties/>
-  <testcase name="itCanDeleteAllToDos" classname="dao.Sql2oLabelDaoTest" time="0.319"/>
+  <testcase name="allReturnsDefaultLabelIfNoOtherLabels" classname="dao.Sql2oLabelDaoTest" time="0.044"/>
+  <testcase name="itCanDeleteALabel" classname="dao.Sql2oLabelDaoTest" time="0.051"/>
+  <testcase name="creatingALabelSetsId" classname="dao.Sql2oLabelDaoTest" time="0.018"/>
+  <testcase name="allLabelsContainAllLabels" classname="dao.Sql2oLabelDaoTest" time="0.041"/>
+  <testcase name="allReturnsOneLabelIfNoOtherLabels" classname="dao.Sql2oLabelDaoTest" time="0.017"/>
+  <testcase name="existingLabelsCanBeFoundById" classname="dao.Sql2oLabelDaoTest" time="0.044"/>
+  <testcase name="itCanEditAToDo" classname="dao.Sql2oLabelDaoTest" time="0.033"/>
+  <testcase name="itCanDeleteAllToDos" classname="dao.Sql2oLabelDaoTest" time="0.052"/>
+  <testcase name="allReturnsAllLabels" classname="dao.Sql2oLabelDaoTest" time="0.038"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

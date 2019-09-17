@@ -50,7 +50,7 @@ public class Sql2oLabelDaoTest {
         labelDao.add(labelTwo);
         labelDao.add(labelThree);
 
-        assertEquals(3, labelDao.all().size());
+        assertEquals(4, labelDao.all().size());
     }
 
     @Test
@@ -67,8 +67,14 @@ public class Sql2oLabelDaoTest {
     }
 
     @Test
-    public void allReturnsNothingIfNoLabels(){
-        assertTrue(labelDao.all().isEmpty());
+    public void allReturnsOneLabelIfNoOtherLabels(){
+        assertEquals(1, labelDao.all().size());
+    }
+
+    @Test
+    public void allReturnsDefaultLabelIfNoOtherLabels(){
+        Label onlyLabel = labelDao.all().get(0);
+        assertEquals("(none)", onlyLabel.getName());
     }
 
     @Test
@@ -100,7 +106,7 @@ public class Sql2oLabelDaoTest {
         labelDao.add(labelThree);
 
         labelDao.clearAll();
-        assertEquals(0, labelDao.all().size());
+        assertEquals(1, labelDao.all().size());
         assertThat(labelDao.all(), not(hasItems(labelOne, labelTwo, labelThree)));
     }
 
@@ -110,6 +116,9 @@ public class Sql2oLabelDaoTest {
         conn.createQuery(sql).executeUpdate();
         sql = "ALTER SEQUENCE label_id_seq RESTART WITH 1;";
         conn.createQuery(sql).executeUpdate();
+        conn.createQuery("INSERT INTO label (name) VALUES (:none)")
+                .addParameter("none", "(none)")
+                .executeUpdate();
         conn.close();
     }
 

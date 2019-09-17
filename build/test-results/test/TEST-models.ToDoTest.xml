@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="models.ToDoTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-09-17T09:32:13" hostname="Makerss-MacBook-Pro-2.local" time="0.049">
+  <properties/>
+  <testcase name="itInstantiates" classname="models.ToDoTest" time="0.012"/>
+  <testcase name="itHasContent" classname="models.ToDoTest" time="0.012"/>
+  <testcase name="defaultLabelIdIsOne" classname="models.ToDoTest" time="0.012"/>
+  <testcase name="itCanHaveALabelId" classname="models.ToDoTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
